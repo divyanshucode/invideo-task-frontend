@@ -11,10 +11,10 @@ function App() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-red-500 mb-2">
-            Two-Page App TEST
+            Two-Page App
           </h1>
           <div className="bg-blue-500 text-white p-4 rounded-lg">
-            Tailwind Test - This should be blue background with white text
+            Rust Calculator
           </div>
         </div>
 
