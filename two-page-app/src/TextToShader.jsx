@@ -19,7 +19,7 @@ function TextToShader() {
     // setShaderCode(''); 
 
     try {
-      const response = await fetch('http://localhost:4000/api/generate-shader', {
+      const response = await fetch('https://shader-backend.onrender.com/api/generate-shader', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ description }),
