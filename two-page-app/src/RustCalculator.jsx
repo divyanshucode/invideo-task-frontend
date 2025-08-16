@@ -1,4 +1,9 @@
 import { useState } from 'react';
+// Import the functions directly. The plugins handle the rest.
+import init, { calculate } from '../../calculator_logic/pkg/calculator_logic.js';
+
+// Initialize the module at the top level.
+init();
 
 function RustCalculator() {
   const [expression, setExpression] = useState('');
@@ -6,17 +11,14 @@ function RustCalculator() {
   const [error, setError] = useState('');
 
   const handleCalculate = () => {
+    if (!expression) return;
     try {
-      if (!/^[0-9+\-*/.() ]+$/.test(expression)) {
-        throw new Error('Invalid characters');
-      }
-      
-      // Temporary JavaScript evaluation (will be replaced with Rust/WASM)
-      const calcResult = eval(expression);
+      // Call the function directly, with no need to check if it's ready.
+      const calcResult = calculate(expression);
       setResult(calcResult.toString());
       setError('');
     } catch (err) {
-      setError('Invalid expression');
+      setError(err.toString() || 'Invalid expression');
       setResult('');
     }
   };
