@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // Import the functions directly. The plugins handle the rest.
-import init, { calculate } from '../../calculator_logic/pkg/calculator_logic.js';
+import init, { calculate } from './pkg/calculator_logic.js';
 
 // Initialize the module at the top level.
 init();
